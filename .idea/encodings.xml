@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo3" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo4" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo5" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo/springcloud-mybatis-demo1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mybatis-demo/springcloud-mybatis-demo2" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="demo1" />
+        <module name="springcloud-jdbc-demo1" />
+        <module name="springcloud-jdbc-demo2" />
+        <module name="springcloud-jdbc-demo3" />
+        <module name="springcloud-jdbc-demo4" />
+        <module name="springcloud-jdbc-demo5" />
+        <module name="springcloud-jpa-demo1" />
+        <module name="springcloud-jpa-demo2" />
+        <module name="springcloud-mybatis-demo1" />
+        <module name="springcloud-mybatis-demo2" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo1" target="1.8" />
+      <module name="springcloud-jdbc-demo1" target="1.8" />
+      <module name="springcloud-jdbc-demo2" target="1.8" />
+      <module name="springcloud-jdbc-demo3" target="1.8" />
+      <module name="springcloud-jdbc-demo4" target="1.8" />
+      <module name="springcloud-jdbc-demo5" target="1.8" />
+      <module name="springcloud-jpa-demo1" target="1.8" />
+      <module name="springcloud-jpa-demo2" target="1.8" />
+      <module name="springcloud-mybatis-demo1" target="1.8" />
+      <module name="springcloud-mybatis-demo2" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
