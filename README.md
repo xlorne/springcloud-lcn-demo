@@ -17,8 +17,9 @@ demo1作为分布式事务的发起者，调用了demo2 demo3，demo3有调用�
 
 ## 使用步骤
 
-1. 启动TxManager
-2. 添加配置maven库与tx-lcn库。
+1. 启动[TxManager](https://github.com/1991wangliang/tx-lcn/tree/master/tx-manager) 
+
+2. 添加配置maven库与tx-lcn库
 
 maven私有仓库地址：
 ```
