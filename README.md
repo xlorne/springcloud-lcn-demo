@@ -1,4 +1,4 @@
-# springcloud LCN实例demo
+# springcloud LCN分布式事务示例demo
 
 
 ## 使用说明
