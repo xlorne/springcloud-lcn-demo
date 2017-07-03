@@ -78,7 +78,7 @@ public class TxTransactionInterceptor {
 
 **`@FeignClient`的方式** 
 
-若使用的是`@FeignClient`的方式，则需要添加`configuration`配置。*
+若使用的是`@FeignClient`的方式，则需要添加`configuration`配置。
 
 方案一：
 
@@ -162,7 +162,7 @@ public class MyConfiguration {
         
 ```
 
-
+支持传统的Http方式也就意味着支持http下的分布式事务
 
 6. 配置项目的`application.properties`的配置文件。
 
