@@ -148,6 +148,24 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 
 ```
 
+7. 创建数据库，项目都是依赖相同的数据库，创建一次其他的demo下将不再需要重复创建。mysql数据库，库名称test
+
+```sql
+
+USE test;
+
+DROP TABLE IF EXISTS `t_test`;
+
+CREATE TABLE `t_test` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+```
+
+
 ## 测试说明
 
 demo1/demo2类型的 demo1都是消费者，默认在业务里添加了`int v = 100/0;`异常代码。因此在不注释的情况下事务回归。
