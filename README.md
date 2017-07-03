@@ -149,6 +149,8 @@ public class MyConfiguration {
 
 
 ```
+在RestTemplateBuilder添加`TransactionHttpRequestInterceptor`拦截器
+
 
 **传统的Http请求方式**
 
