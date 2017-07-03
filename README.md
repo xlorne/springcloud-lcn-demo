@@ -168,9 +168,27 @@ CREATE TABLE `t_test` (
 
 ## 测试说明
 
-demo1/demo2类型的 demo1都是消费者，默认在业务里添加了`int v = 100/0;`异常代码。因此在不注释的情况下事务回归。
 
-demo1/2/3/4/5 下载demo1与demo3下都添加了`int v = 100/0;`，默认回滚，全部注释掉会提交事务。
+demo1/demo2类型:
+
+运行demo2下的DemoApplication，再运行demo1下的DemoApplication。
+
+然后在浏览器访问http://127.0.0.1:8081/demo/save
+
+效果：/by zero 异常所有事务都回滚。
+
+说明： demo1都是消费者，默认在业务里添加了`int v = 100/0;`异常代码。因此在不注释的情况下事务回归。
+
+
+demo1/2/3/4/5类型:
+ 
+运行demo5下的DemoApplication，再运行demo4下的DemoApplication，再运行demo3下的DemoApplication，再运行demo2下的DemoApplication，再运行demo1下的DemoApplication。
+
+然后在浏览器访问http://127.0.0.1:8081/demo/save
+ 
+效果：/by zero 异常所有事务都回滚。
+
+说明：demo1和demo3是消费者，默认在业务里添加了`int v = 100/0;`，demo3这行已注释，默认回滚，全部注释掉会提交事务。
 
 
 技术交流群：554855843
