@@ -49,8 +49,6 @@ maven jar地址
 #txmanager地址 /tx/manager/getServer写法固定
 url=http://192.168.3.102:8888/tx/manager/getServer
 
-#模块名称 （模块不能重名）
-model=demo1
 ```
 
 4. 添加事务拦截器
