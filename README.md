@@ -73,7 +73,12 @@ public class TxTransactionInterceptor {
 
 注意：@Around 拦截地址不能包含com.lorne.tx.*
 
-5. 消费者方`@FeignClient`下添加`configuration`配置。 
+5. 在消费者配置拦截器.
+
+
+**`@FeignClient`的方式** 
+
+若使用的是`@FeignClient`的方式，则需要添加`configuration`配置。*
 
 方案一：
 
@@ -125,6 +130,39 @@ public class MyConfiguration {
 ```
 
 使用自定义Configuration添加`TransactionRestTemplateInterceptor`
+
+
+**RestTemplate的方式**
+
+
+在builder时添加拦截器
+
+```java
+
+	@Autowired
+	private RestTemplateBuilder builder;
+
+	@Bean
+	public RestTemplate restTemplate() {
+		return builder.interceptors(new TransactionHttpRequestInterceptor()).build();
+	}
+
+
+```
+
+**传统的Http请求方式**
+
+若采用的是传统的Http请求那么需要手动在发起请求的header下添加tx-group参数如下：
+
+```java
+
+        TxTransactionLocal txTransactionLocal = TxTransactionLocal.current();
+        String groupId = txTransactionLocal==null?null:txTransactionLocal.getGroupId();
+        request.addHeader("tx-group",groupId);
+        
+```
+
+
 
 6. 配置项目的`application.properties`的配置文件。
 
