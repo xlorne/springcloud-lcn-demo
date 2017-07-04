@@ -17,7 +17,7 @@ demo1作为分布式事务的发起者，调用了demo2 demo3，demo3有调用�
 
 ## 使用步骤
 
-1. 启动[TxManager](https://github.com/1991wangliang/tx-lcn/tree/master/tx-manager) 
+1. 启动[TxManager](https://github.com/1991wangliang/tx-manager-war) 
 
 2. 添加配置maven库与tx-lcn库
 
@@ -46,8 +46,8 @@ maven jar地址
 3. 添加tx.properties
 
 ```
-#txmanager地址 /tx/manager/getServer写法固定
-url=http://192.168.3.102:8888/tx/manager/getServer
+#txmanager地址  http://txmanager ip:txmanager port/txmanager name/tx/manager/getServer 写法固定
+url=http://127.0.0.1:8080/tx-manager-2.0.0-SNAPSHOT/tx/manager/getServer
 
 ```
 
