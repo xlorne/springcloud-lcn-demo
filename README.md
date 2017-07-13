@@ -41,13 +41,31 @@ maven jar地址
 		</dependency>
 
 ```
-最新版本为 `2.1.0.RELEASE`
+最新版本为 `2.2.0.RELEASE`
 
 3. 添加tx.properties
 
 ```
 #txmanager地址  http://txmanager ip:txmanager port/txmanager name/tx/manager/getServer 写法固定
 url=http://127.0.0.1:8080/tx-manager-2.0.0-SNAPSHOT/tx/manager/getServer
+
+#事务补偿记录配置
+
+#日志类型 db file （db file二选一）
+compensate.type=db
+#db 数据库链接地址
+compensate.db.url = jdbc:mysql://localhost:3306/test
+#db 数据库类型 目前支持 mysql oracle sqlserver
+compensate.db.dbType = mysql
+#db 数据库账号
+compensate.db.username = root
+#db 数据库密码
+compensate.db.password = root
+
+#日志类型 db file
+#compensate.type=file
+# 文件日志地址
+#compensate.file.path = /lcn
 
 ```
 
