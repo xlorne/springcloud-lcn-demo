@@ -43,7 +43,7 @@ public class DemoServiceImpl implements DemoService {
 
         int rs1 = testDao.save();
 
-       // int v = 100/0;
+       int v = 100/0;
 
         return rs1+rs2+rs3;
     }

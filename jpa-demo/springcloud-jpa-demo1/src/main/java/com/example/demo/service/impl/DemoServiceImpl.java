@@ -7,7 +7,6 @@ import com.example.demo.service.DemoService;
 import com.lorne.tx.annotation.TxTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -40,8 +39,7 @@ public class DemoServiceImpl implements DemoService {
         test.setName("hello1");
         int rs1 = testRepository.save(test).getId();
 
-
-      //  int v = 100/0;
+        int v = 100/0;
 
         return rs1+rs2;
     }
