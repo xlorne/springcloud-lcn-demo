@@ -35,7 +35,6 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     @TxTransaction
-    @Transactional
     public int save() {
 
         int rs2 = demo2Client.save();

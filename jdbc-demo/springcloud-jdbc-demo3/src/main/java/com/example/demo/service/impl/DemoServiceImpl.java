@@ -5,6 +5,7 @@ import com.example.demo.client.Demo5Client;
 import com.example.demo.dao.TestDao;
 import com.example.demo.entity.Test;
 import com.example.demo.service.DemoService;
+import com.lorne.tx.annotation.TxTransaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,7 +33,7 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
-    @Transactional
+    @TxTransaction
     public int save() {
 
         int rs4 = demo4Client.save();
