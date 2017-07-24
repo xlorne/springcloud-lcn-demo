@@ -53,6 +53,8 @@ url=http://127.0.0.1:8080/tx-manager-2.0.0-SNAPSHOT/tx/manager/getServer
 
 #日志类型 db file （db file二选一）
 compensate.type=db
+#模块前缀名称 （同模块在做负载均衡时需要区分前缀字段）
+ompensate.prefix = xxx
 #db 数据库链接地址
 compensate.db.url = jdbc:mysql://localhost:3306/test
 #db 数据库类型 目前支持 mysql oracle sqlserver
