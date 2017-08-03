@@ -222,8 +222,7 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 
 
 ```
-
-@Bean
+    @Bean
 	public DataSource dataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
 		dataSource.setUrl(env.getProperty("spring.datasource.url"));
