@@ -221,7 +221,8 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 7. 配置LCN代理连接池
 
 
-```
+```java
+
     @Bean
 	public DataSource dataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
