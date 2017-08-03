@@ -18,6 +18,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: com.lorne.tx:springcloud-transaction:3.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.lorne.tx:lorne-tx-core:3.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.lorne.tx:springcloud-transaction:3.0.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.lorne.tx:lorne-tx-core:3.0.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.lorne.core:lorne_core:1.0.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet.jsp:javax.servlet.jsp-api:2.3.1" level="project" />
@@ -180,7 +182,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:jconsole:1.8.0">
         <CLASSES>
-          <root url="jar://D:/Program Files/Java/jdk1.8.0_40/lib/jconsole.jar!/" />
+          <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/jconsole.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -189,7 +191,7 @@
     <orderEntry type="module-library">
       <library name="Maven: com.alibaba:tools:1.8.0">
         <CLASSES>
-          <root url="jar://D:/Program Files/Java/jdk1.8.0_40/lib/tools.jar!/" />
+          <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/tools.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
