@@ -41,7 +41,7 @@ maven jar地址
 		</dependency>
 
 ```
-最新版本为 `2.3.0.RELEASE`
+最新版本为 `3.0.0.RELEASE`
 
 3. 添加tx.properties
 
