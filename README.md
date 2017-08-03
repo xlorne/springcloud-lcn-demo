@@ -17,7 +17,7 @@ demo1作为分布式事务的发起者，调用了demo2 demo3，demo3有调用�
 
 ## 使用步骤
 
-1. 启动[TxManager](https://github.com/1991wangliang/tx-manager-war) 
+1. 启动[TxManager](https://github.com/1991wangliang/tx-lcn/tree/master/tx-manager) 
 
 2. 添加配置maven库与tx-lcn库
 
@@ -41,13 +41,14 @@ maven jar地址
 		</dependency>
 
 ```
-最新版本为 `2.2.0.RELEASE`
+最新版本为 `2.3.0.RELEASE`
 
 3. 添加tx.properties
 
 ```
+
 #txmanager地址  http://txmanager ip:txmanager port/txmanager name/tx/manager/getServer 写法固定
-url=http://127.0.0.1:8080/tx-manager-2.0.0-SNAPSHOT/tx/manager/getServer
+url=http://127.0.0.1:8761/tx/manager/getServer
 
 #事务补偿记录配置
 
@@ -55,6 +56,9 @@ url=http://127.0.0.1:8080/tx-manager-2.0.0-SNAPSHOT/tx/manager/getServer
 compensate.type=db
 #模块前缀名称 （同模块在做负载均衡时需要区分前缀字段）
 ompensate.prefix = xxx
+#可以优雅关闭 （0：不支持，1：支持）
+graceful.close = 1
+
 #db 数据库链接地址
 compensate.db.url = jdbc:mysql://localhost:3306/test
 #db 数据库类型 目前支持 mysql oracle sqlserver
@@ -74,14 +78,20 @@ compensate.db.password = root
 4. 添加事务拦截器
 ```java
 
+
 @Aspect
 @Component
-public class TxTransactionInterceptor {
+public class TxTransactionInterceptor  implements Ordered{
 
     @Autowired
     private TxManagerInterceptor txManagerInterceptor;
 
-    @Around("execution(* com.example.demo.service.impl.*Impl.*(..))")
+    @Override
+    public int getOrder() {
+        return 1;
+    }
+
+    @Around("execution(* com.demo.service.impl.*Impl.*(..))")
     public Object around(ProceedingJoinPoint point)throws Throwable{
         return txManagerInterceptor.around(point);
     }
@@ -89,7 +99,9 @@ public class TxTransactionInterceptor {
 
 ```
 
-注意：@Around 拦截地址不能包含com.lorne.tx.*
+注意：  
+@Around 拦截地址不能包含com.lorne.tx.*   
+LCN是不控制事务。切面仅用于识别LCN分布式事务的作用。
 
 5. 在消费者配置拦截器.
 
@@ -206,7 +218,38 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 
 ```
 
-7. 创建数据库，项目都是依赖相同的数据库，创建一次其他的demo下将不再需要重复创建。mysql数据库，库名称test
+7. 配置LCN代理连接池
+
+
+```
+
+@Bean
+	public DataSource dataSource() {
+		DruidDataSource dataSource = new DruidDataSource();
+		dataSource.setUrl(env.getProperty("spring.datasource.url"));
+		dataSource.setUsername(env.getProperty("spring.datasource.username"));//用户名
+		dataSource.setPassword(env.getProperty("spring.datasource.password"));//密码
+		dataSource.setInitialSize(2);
+		dataSource.setMaxActive(20);
+		dataSource.setMinIdle(0);
+		dataSource.setMaxWait(60000);
+		dataSource.setValidationQuery("SELECT 1");
+		dataSource.setTestOnBorrow(false);
+		dataSource.setTestWhileIdle(true);
+		dataSource.setPoolPreparedStatements(false);
+
+		LCNDataSourceProxy dataSourceProxy = new LCNDataSourceProxy();
+		dataSourceProxy.setDataSource(dataSource);
+		//分布式事务参与的最大连接数，确保不要超过普通连接池的最大值即可
+		dataSourceProxy.setMaxCount(10);
+		return dataSourceProxy;
+	}
+	
+```
+
+
+
+8. 创建数据库，项目都是依赖相同的数据库，创建一次其他的demo下将不再需要重复创建。mysql数据库，库名称test
 
 ```sql
 
@@ -222,6 +265,9 @@ CREATE TABLE `t_test` (
 
 
 ```
+
+
+
 
 ## 注意事项
 
