@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.lorne.tx.db.LCNDataSourceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -39,6 +40,10 @@ public class DemoApplication {
 		dataSource.setTestOnBorrow(false);
 		dataSource.setTestWhileIdle(true);
 		dataSource.setPoolPreparedStatements(false);
-		return dataSource;
+
+		LCNDataSourceProxy dataSourceProxy = new LCNDataSourceProxy();
+		dataSourceProxy.setDataSource(dataSource);
+		dataSourceProxy.setMaxCount(10);
+		return dataSourceProxy;
 	}
 }

@@ -7,6 +7,7 @@ import com.example.demo.entity.Test;
 import com.example.demo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class DemoServiceImpl implements DemoService {
     }
 
     @Override
+    @Transactional
     public int save() {
 
         int rs4 = demo4Client.save();

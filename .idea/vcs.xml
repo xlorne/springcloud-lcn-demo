@@ -2,10 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springcloud-jdbc-demo1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springcloud-jdbc-demo2" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springcloud-jdbc-demo3" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springcloud-jdbc-demo4" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/springcloud-jdbc-demo5" vcs="Git" />
   </component>
 </project>
