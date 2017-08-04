@@ -52,8 +52,6 @@ url=http://127.0.0.1:8761/tx/manager/getServer
 
 #事务补偿记录配置
 
-#日志类型 db file （db file二选一）
-compensate.type=db
 #可以优雅关闭 （0：不支持，1：支持）
 graceful.close = 1
 
@@ -66,10 +64,6 @@ compensate.db.username = root
 #db 数据库密码
 compensate.db.password = root
 
-#日志类型 db file
-#compensate.type=file
-# 文件日志地址
-#compensate.file.path = /lcn
 
 ```
 
