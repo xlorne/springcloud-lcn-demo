@@ -54,8 +54,6 @@ url=http://127.0.0.1:8761/tx/manager/getServer
 
 #日志类型 db file （db file二选一）
 compensate.type=db
-#模块前缀名称 （同模块在做负载均衡时需要区分前缀字段）
-ompensate.prefix = xxx
 #可以优雅关闭 （0：不支持，1：支持）
 graceful.close = 1
 
