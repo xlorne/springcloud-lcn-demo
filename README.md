@@ -205,8 +205,9 @@ server.port = 8081
 eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka/
 
 #Ribbon的负载均衡策略
-nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
-
+ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
+#禁止Ribbon重试调用
+ribbon.MaxAutoRetriesNextServer=0
 
 ```
 
