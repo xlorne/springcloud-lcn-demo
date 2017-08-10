@@ -32,7 +32,7 @@ public class DemoServiceImpl implements DemoService {
         int rs = testRepository.save(test).getId();
 
 
-       // int v = 100/0;
+        int v = 100/0;
         return rs;
     }
 }
