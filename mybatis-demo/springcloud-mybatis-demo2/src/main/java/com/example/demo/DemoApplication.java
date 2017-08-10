@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 
 import javax.sql.DataSource;
@@ -45,5 +46,24 @@ public class DemoApplication {
 		dataSourceProxy.setDataSource(dataSource);
 		dataSourceProxy.setMaxCount(10);
 		return dataSourceProxy;
+	}
+
+	@Primary
+	@Bean(name = "compensateDataSource")
+	public DataSource compensateDataSource() {
+		DruidDataSource dataSource = new DruidDataSource();
+		dataSource.setUrl(env.getProperty("spring.datasource.url"));
+		dataSource.setUsername(env.getProperty("spring.datasource.username"));//用户名
+		dataSource.setPassword(env.getProperty("spring.datasource.password"));//密码
+		dataSource.setInitialSize(1);
+		dataSource.setMaxActive(5);
+		dataSource.setMinIdle(0);
+		dataSource.setMaxWait(60000);
+		dataSource.setValidationQuery("SELECT 1");
+		dataSource.setTestOnBorrow(false);
+		dataSource.setTestWhileIdle(true);
+		dataSource.setPoolPreparedStatements(false);
+
+		return dataSource;
 	}
 }

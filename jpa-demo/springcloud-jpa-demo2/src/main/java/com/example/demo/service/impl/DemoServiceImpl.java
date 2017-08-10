@@ -31,6 +31,8 @@ public class DemoServiceImpl implements DemoService {
         test.setName("hello2");
         int rs = testRepository.save(test).getId();
 
+
+       // int v = 100/0;
         return rs;
     }
 }

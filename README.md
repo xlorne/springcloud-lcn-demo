@@ -52,9 +52,6 @@ url=http://127.0.0.1:8761/tx/manager/getServer
 
 #事务补偿记录配置
 
-#可以优雅关闭 （0：不支持，1：支持）
-graceful.close = 1
-
 #db 数据库链接地址
 compensate.db.url = jdbc:mysql://localhost:3306/test
 #db 数据库类型 目前支持 mysql oracle sqlserver
@@ -210,7 +207,7 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 
 ```
 
-7. 配置LCN代理连接池
+7. 配置LCN代理和补偿连接池
 
 
 ```java
@@ -236,6 +233,25 @@ nono.ribbon.NFLoadBalancerRuleClassName=com.netflix.loadbalancer.RandomRule
 		dataSourceProxy.setMaxCount(10);
 		return dataSourceProxy;
 	}
+	
+		@Primary
+    	@Bean(name = "compensateDataSource")
+    	public DataSource compensateDataSource() {
+    		DruidDataSource dataSource = new DruidDataSource();
+    		dataSource.setUrl(env.getProperty("spring.datasource.url"));
+    		dataSource.setUsername(env.getProperty("spring.datasource.username"));//用户名
+    		dataSource.setPassword(env.getProperty("spring.datasource.password"));//密码
+    		dataSource.setInitialSize(1);
+    		dataSource.setMaxActive(5);
+    		dataSource.setMinIdle(0);
+    		dataSource.setMaxWait(60000);
+    		dataSource.setValidationQuery("SELECT 1");
+    		dataSource.setTestOnBorrow(false);
+    		dataSource.setTestWhileIdle(true);
+    		dataSource.setPoolPreparedStatements(false);
+    
+    		return dataSource;
+    	}
 	
 ```
 
