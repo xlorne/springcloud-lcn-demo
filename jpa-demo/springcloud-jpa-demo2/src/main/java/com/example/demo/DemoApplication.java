@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.lorne.tx.compensate.repository.CompensateDataSource;
 import com.lorne.tx.db.LCNDataSourceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -51,9 +52,9 @@ public class DemoApplication {
 		return dataSourceProxy;
 	}
 
-	@Primary
-	@Bean(name = "compensateDataSource")
-	public DataSource compensateDataSource() {
+	@Bean
+	public CompensateDataSource compensateDataSource() {
+
 		DruidDataSource dataSource = new DruidDataSource();
 		dataSource.setUrl(env.getProperty("spring.datasource.url"));
 		dataSource.setUsername(env.getProperty("spring.datasource.username"));//用户名
@@ -67,6 +68,8 @@ public class DemoApplication {
 		dataSource.setTestWhileIdle(true);
 		dataSource.setPoolPreparedStatements(false);
 
-		return dataSource;
+		CompensateDataSource compensateDataSource = new CompensateDataSource();
+		compensateDataSource.setDataSource(dataSource);
+		return compensateDataSource;
 	}
 }
