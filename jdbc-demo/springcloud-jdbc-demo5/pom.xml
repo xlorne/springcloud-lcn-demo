@@ -35,9 +35,9 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.lorne.tx</groupId>
+			<groupId>com.github.1991wangliang</groupId>
 			<artifactId>springcloud-transaction</artifactId>
-			<version>3.0.0.RELEASE</version>
+			<version>1.0.0</version>
 		</dependency>
 
 

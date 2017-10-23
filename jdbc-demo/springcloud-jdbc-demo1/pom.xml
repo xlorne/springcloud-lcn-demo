@@ -11,12 +11,7 @@
 	<name>demo1</name>
 	<description>Demo project for Spring Boot</description>
 
-	<repositories>
-		<repository>
-			<id>lorne</id>
-			<url>https://1991wangliang.github.io/repository</url>
-		</repository>
-	</repositories>
+
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -35,10 +30,11 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>com.lorne.tx</groupId>
+			<groupId>com.github.1991wangliang</groupId>
 			<artifactId>springcloud-transaction</artifactId>
-			<version>3.0.0.RELEASE</version>
+			<version>1.0.0</version>
 		</dependency>
+
 
 
 		<dependency>
