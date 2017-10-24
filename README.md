@@ -17,27 +17,18 @@ demo1作为分布式事务的发起者，调用了demo2 demo3，demo3有调用�
 
 ## 使用步骤
 
-1. 启动[TxManager](https://github.com/1991wangliang/tx-lcn/tree/master/tx-manager) 
+1. 见wiki[TxManager启动说明](https://github.com/1991wangliang/tx-lcn/wiki) 
 
 2. 添加配置maven库与tx-lcn库
-
-maven私有仓库地址：
-```
-	<repositories>
-		<repository>
-			<id>lorne</id>
-			<url>https://1991wangliang.github.io/repository</url>
-		</repository>
-	</repositories>
 
 ```
 maven jar地址 
 
 ```
 		<dependency>
-			<groupId>com.lorne.tx</groupId>
+			<groupId>com.github.1991wangliang</groupId>
 			<artifactId>springcloud-transaction</artifactId>
-			<version>x.x.x.RELEASE</version>
+			<version>1.0.0</version>
 		</dependency>
 
 ```
@@ -252,6 +243,17 @@ ribbon.MaxAutoRetriesNextServer=0
 	
 ```
 
+  有些用法发现用DataSource类型返回数据时有错误，建议修改为`LCNDataSourceProxy`
+  
+```
+
+        @Bean
+    	public LCNDataSourceProxy dataSource() {
+    	    // ... ... 
+    	    return ...;
+    	}
+```
+    
 
 
 8. 创建数据库，项目都是依赖相同的数据库，创建一次其他的demo下将不再需要重复创建。mysql数据库，库名称test

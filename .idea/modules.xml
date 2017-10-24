@@ -3,23 +3,16 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" />
       <module fileurl="file://E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" filepath="E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo1/springcloud-jdbc-demo1.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" />
       <module fileurl="file://E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" filepath="E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo2/springcloud-jdbc-demo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" />
       <module fileurl="file://E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" filepath="E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo3/springcloud-jdbc-demo3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" />
       <module fileurl="file://E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" filepath="E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo4/springcloud-jdbc-demo4.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" filepath="$PROJECT_DIR$/jdbc-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" />
       <module fileurl="file://E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" filepath="E:/developer/idea/springcloud-lcn-demo/springcloud-jdbc-demo5/springcloud-jdbc-demo5.iml" />
       <module fileurl="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo1/springcloud-jpa-demo1.iml" filepath="$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo1/springcloud-jpa-demo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo1/springcloud-jpa-demo1.iml" filepath="$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo1/springcloud-jpa-demo1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo2/springcloud-jpa-demo2.iml" filepath="$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo2/springcloud-jpa-demo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo2/springcloud-jpa-demo2.iml" filepath="$PROJECT_DIR$/jpa-demo/springcloud-jpa-demo2/springcloud-jpa-demo2.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/springcloud-lcn-demo.iml" filepath="$PROJECT_DIR$/.idea/springcloud-lcn-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-demo/springcloud-mybatis-demo1/springcloud-mybatis-demo1.iml" filepath="$PROJECT_DIR$/mybatis-demo/springcloud-mybatis-demo1/springcloud-mybatis-demo1.iml" />
