@@ -19,20 +19,16 @@ demo1作为分布式事务的发起者，调用了demo2 demo3，demo3有调用�
 
 1. 见wiki[TxManager启动说明](https://github.com/1991wangliang/tx-lcn/wiki) 
 
-2. 添加配置maven库与tx-lcn库
+2. 添加配置maven配置
 
 ```
-maven jar地址 
-
+    <dependency>
+        <groupId>com.github.1991wangliang</groupId>
+        <artifactId>springcloud-transaction</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    
 ```
-		<dependency>
-			<groupId>com.github.1991wangliang</groupId>
-			<artifactId>springcloud-transaction</artifactId>
-			<version>1.0.0</version>
-		</dependency>
-
-```
-最新版本为 `3.0.0.RELEASE`
 
 3. 添加tx.properties
 
