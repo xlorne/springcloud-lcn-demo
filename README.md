@@ -46,7 +46,7 @@ compensate.db.dbType = mysql
 ```
 
 4. 添加事务拦截器
-```java
+```
 
 
 @Aspect
@@ -80,28 +80,8 @@ LCN是不控制事务。切面仅用于识别LCN分布式事务的作用。
 
 若使用的是`@FeignClient`的方式，则需要添加`configuration`配置。
 
-方案一：
-
-```java
-@FeignClient(value = "demo2",configuration = TransactionRestTemplateConfiguration.class)
-public interface Demo2Client {
-
-
-    @RequestMapping("/demo/list")
-    List<Test> list();
-
-
-    @RequestMapping("/demo/save")
-    int save();
-}
 
 ```
-
-直接使用lcn提供的`TransactionRestTemplateConfiguration`类。
-
-方案二：
-
-```java
 @FeignClient(value = "demo3",configuration = MyConfiguration.class)
 public interface Demo3Client {
 
@@ -116,14 +96,13 @@ public interface Demo3Client {
 
 ```
 
-```java
+```
 @Configuration
 public class MyConfiguration {
 
     @Bean
-    @Scope("prototype")
-    public Feign.Builder feignBuilder() {
-        return Feign.builder().requestInterceptor(new TransactionRestTemplateInterceptor());
+    public RequestInterceptor requestInterceptor(){
+        return new TransactionRestTemplateInterceptor();
     }
 }
 
@@ -137,7 +116,7 @@ public class MyConfiguration {
 
 在builder时添加拦截器
 
-```java
+```
 
 	@Autowired
 	private RestTemplateBuilder builder;
@@ -156,11 +135,11 @@ public class MyConfiguration {
 
 若采用的是传统的Http请求那么需要手动在发起请求的header下添加tx-group参数如下：
 
-```java
+```
 
-        TxTransactionLocal txTransactionLocal = TxTransactionLocal.current();
-        String groupId = txTransactionLocal==null?null:txTransactionLocal.getGroupId();
-        request.addHeader("tx-group",groupId);
+    TxTransactionLocal txTransactionLocal = TxTransactionLocal.current();
+    String groupId = txTransactionLocal==null?null:txTransactionLocal.getGroupId();
+    request.addHeader("tx-group",groupId);
         
 ```
 
@@ -192,7 +171,7 @@ ribbon.MaxAutoRetriesNextServer=0
 7. 配置LCN代理和补偿连接池
 
 
-```java
+```
 
     @Bean
 	public DataSource dataSource() {
@@ -254,7 +233,7 @@ ribbon.MaxAutoRetriesNextServer=0
 
 8. 创建数据库，项目都是依赖相同的数据库，创建一次其他的demo下将不再需要重复创建。mysql数据库，库名称test
 
-```sql
+```
 
 USE test;
 
@@ -278,6 +257,8 @@ CREATE TABLE `t_test` (
 
 事务的补偿机制是基于java反射的方式重新执行一次需要补偿的业务。因此执行的时候需要获取到业务的service对象，LCN是基于spring的ApplicationContent的getBean方法获取bean的对象的。因此不允许出现重名对象。
 
+
+2. 目前在Feign下开启断路器以后LCN控制失效，该问题正在处理中。
 
 ## 测试说明
 
