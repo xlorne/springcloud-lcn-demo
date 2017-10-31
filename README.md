@@ -5,6 +5,10 @@
 
 框架分为jdbc／jpa／mybatis三个版本。各个版本之间除了DB框架差异以外，其他配置都相同。
 
+mybatis版本的demo开启了hystrix  
+
+关于hystrix的策略说明可参考：[http://www.jianshu.com/p/b8d21248c9b1](http://www.jianshu.com/p/b8d21248c9b1)
+
 demo分为两类，demo1/demo2 只是消费者与提供者两个的简单demo。以及demo1/2/3/4/5复杂类型调用关系。
 
 demo1/demo2类型：
@@ -97,7 +101,7 @@ public interface Demo3Client {
 ```
 
 ```
-@Configuration
+
 public class MyConfiguration {
 
     @Bean
@@ -257,8 +261,6 @@ CREATE TABLE `t_test` (
 
 事务的补偿机制是基于java反射的方式重新执行一次需要补偿的业务。因此执行的时候需要获取到业务的service对象，LCN是基于spring的ApplicationContent的getBean方法获取bean的对象的。因此不允许出现重名对象。
 
-
-2. 目前在Feign下开启断路器以后LCN控制失效，该问题正在处理中。
 
 ## 测试说明
 

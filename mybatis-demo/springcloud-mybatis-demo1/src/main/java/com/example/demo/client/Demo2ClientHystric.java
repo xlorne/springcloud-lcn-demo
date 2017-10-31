@@ -5,9 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-/**
- * Created by fangzhipeng on 2017/4/6.
- */
+
 @Component
 public class Demo2ClientHystric implements Demo2Client {
 
@@ -20,7 +18,10 @@ public class Demo2ClientHystric implements Demo2Client {
 
     @Override
     public int save() {
+
         System.out.println("进入断路器-save。。。");
+
+        int v = 1/0;
         return 0;
     }
 }

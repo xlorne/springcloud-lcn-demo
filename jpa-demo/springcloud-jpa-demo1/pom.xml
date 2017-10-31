@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>demo1</name>
+	<name>springcloud-jpa-demo1</name>
 	<description>Demo project for Spring Boot</description>
 
 
@@ -32,7 +32,7 @@
 		<dependency>
 			<groupId>com.github.1991wangliang</groupId>
 			<artifactId>springcloud-transaction</artifactId>
-			<version>1.0.0</version>
+			<version>1.0.1</version>
 		</dependency>
 
 
