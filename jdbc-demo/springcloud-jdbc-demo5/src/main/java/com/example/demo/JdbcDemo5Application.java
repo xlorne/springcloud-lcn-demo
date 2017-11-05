@@ -4,17 +4,13 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.lorne.tx.compensate.repository.CompensateDataSource;
 import com.lorne.tx.db.LCNDataSourceProxy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
 import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
 
@@ -22,10 +18,10 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class DemoApplication {
+public class JdbcDemo5Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(JdbcDemo5Application.class, args);
 	}
 
 	@Autowired

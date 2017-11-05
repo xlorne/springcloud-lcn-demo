@@ -27,7 +27,7 @@ public class DemoServiceImpl implements DemoService {
     @Transactional
     public int save() {
 
-        int rs = testMapper.save("hello2");
+        int rs = testMapper.save("mybatis-hello-2");
 
         return rs;
     }

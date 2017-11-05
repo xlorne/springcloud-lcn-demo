@@ -38,7 +38,7 @@ public class DemoServiceImpl implements DemoService {
         int rs2 = demo2Client.save();
 
         Test test = new Test();
-        test.setName("hello1");
+        test.setName("jpa-hello-1");
         int rs1 = testRepository.save(test).getId();
 
         int v = 100/0;

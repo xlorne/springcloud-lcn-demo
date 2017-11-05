@@ -267,7 +267,7 @@ CREATE TABLE `t_test` (
 
 demo1/demo2类型:
 
-运行demo2下的DemoApplication，再运行demo1下的DemoApplication。
+运行demo2下的XXXDemoApplication，再运行demo1下的XXXDemoApplication。
 
 然后在浏览器访问http://127.0.0.1:8081/demo/save
 
@@ -278,7 +278,7 @@ demo1/demo2类型:
 
 demo1/2/3/4/5类型:
  
-运行demo5下的DemoApplication，再运行demo4下的DemoApplication，再运行demo3下的DemoApplication，再运行demo2下的DemoApplication，再运行demo1下的DemoApplication。
+分别运行demo5、demo4、demo3、demo2下的XXXDemoApplication，再运行demo1下的XXXDemoApplication。
 
 然后在浏览器访问http://127.0.0.1:8081/demo/save
  
@@ -286,5 +286,7 @@ demo1/2/3/4/5类型:
 
 说明：demo1和demo3是消费者，默认在业务里添加了`int v = 100/0;`，demo3这行已注释，默认回滚，全部注释掉会提交事务。
 
+
+XXXDemoApplication 就是对应不同demo版本下的启动类。
 
 技术交流群：554855843

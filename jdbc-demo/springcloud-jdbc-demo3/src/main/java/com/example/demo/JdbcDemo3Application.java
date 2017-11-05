@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 
 import javax.sql.DataSource;
@@ -19,10 +18,10 @@ import javax.sql.DataSource;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients
-public class DemoApplication {
+public class JdbcDemo3Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(JdbcDemo3Application.class, args);
 	}
 
 	@Autowired

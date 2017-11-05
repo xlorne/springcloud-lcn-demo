@@ -40,7 +40,7 @@ public class DemoServiceImpl implements DemoService {
         int rs2 = demo2Client.save();
 
 
-        int rs1 = testMapper.save("hello1");
+        int rs1 = testMapper.save("mybatis-hello-1");
 
         //int v = 100/0;
 

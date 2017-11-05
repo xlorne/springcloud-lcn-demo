@@ -23,7 +23,7 @@ public class TestDaoImpl implements TestDao {
     @Override
     public int save() {
         String sql = "insert into t_test(name) values (?)";
-        return jdbcTemplate.update(sql,"hello");
+        return jdbcTemplate.update(sql,"jdbc-hello-2");
     }
 
     @Override
