@@ -1,6 +1,6 @@
 # springcloud LCN分布式事务示例demo
 
-视频演示地址：[http://www.txlcn.org/video.html](http://www.txlcn.org/video.html)  
+SpringCloud Demo使用讲解地址：[http://www.txlcn.org/video.html](http://www.txlcn.org/video.html)  
 
 ## 使用说明
 
